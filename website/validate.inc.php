@@ -26,4 +26,13 @@ if ($fetched) {
    echo "<h2>Sorry, login incorrect. Please try again at Drago Electronics Shop.</h2>\n";
    echo "<a href=\"index.php\">Please try again</a>\n";
 }
+
+/*
+   Name: Shuaib Ali
+   Date: September 24, 2024
+   Course: IT202-001
+   Assignment: Project Phase 01
+   Email: sa2796@njit.edu
+*/
+
 ?>
