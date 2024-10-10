@@ -1,0 +1,16 @@
+Create Product
+http://localhost:3000/add_electronics_product.test.php?productID=18&productCode=IPHN16&productName=iPhone16
+Verify Create Product
+http://localhost:3000/list_electronics_products.test.php
+
+Update Product
+http://localhost:3000/change_electronics_product.test.php?productID=13&productCode=IPHN16&productName=iPhone16&description=Latest%20iPhone%20Model&model=IPHONE16&categoryID=66&wholesale=799.00&listPrice=1050.00
+Verify Update Product
+http://localhost:3000/list_electronics_products.test.php
+
+Delete Product
+http://localhost:3000/remove_electronics_product.test.php?productID=18
+Verify Delete Product
+http://localhost:3000/list_electronics_products.test.php
+
+//UCID: sa2796  Date: 10-9-24

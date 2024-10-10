@@ -8,12 +8,19 @@ function getDB() {
    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
    try {
        $db = new mysqli($host, $username, $password, $dbname, $port);
-       error_log("You are connected to the $host database!");
-       return $db;
-   } catch (mysqli_sql_exception $e) {
-       error_log($e->getMessage(), 0);
-       echo $e->getMessage();
-   }
+       if ($db->connect_error) {
+        
+        die("Connection failed: " . $db->connect_error);
+    } else {
+       
+        error_log("You are connected to the $host database!");
+        return $db;
+    }
+} catch (Exception $e) {
+    
+    error_log("Database connection failed: " . $e->getMessage(), 0);
+    return null;
+    }
 }
 // getDB();
 

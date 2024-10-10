@@ -1,0 +1,16 @@
+Create Category
+http://localhost:3000/add_electronics_category.test.php?categoryCode=SMART&categoryName=Smartphones
+Verify Create Category
+http://localhost:3000/list_electronics_categories.php
+
+Update Category
+http://localhost:3000/change_electronics_category.test.php?categoryID=60&categoryCode=SMARTUPD&categoryName=SmartphonesUPD&aisleNumber=11
+Verify Update Category
+http://localhost:3000/list_electronics_categories.php
+
+Delete Category
+http://localhost:3000/remove_electronics_category.test.php?categoryID=60
+Verify Delete Category
+http://localhost:3000/list_electronics_categories.php
+
+//UCID: sa2796  Date: 10-9-24
