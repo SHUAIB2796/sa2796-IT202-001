@@ -4,8 +4,8 @@ $emailAddress = $_POST['emailAddress'];
 $password = $_POST['password'];
 $query = "SELECT firstName, lastName, emailAddress, pronouns FROM DragoManagers " .
         "WHERE emailAddress = ? AND password = SHA2(?,256)";
-$db = getDB();
-$stmt = $db->prepare($query);
+$conn = getDB();
+$stmt = $conn->prepare($query);
 $stmt->bind_param("ss", $emailAddress, $password);
 $stmt->execute();
 $stmt->bind_result($firstName, $lastName, $email, $pronouns);

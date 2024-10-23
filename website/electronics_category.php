@@ -1,10 +1,14 @@
 <?php
-require 'database.php';  
+require_once 'database.php';  
 
 // Shuaib Ali, 10-10-24, IT202-001 Phase 02 Assignment Email: sa2796@njit.edu UCID: sa2796
 
 
 class ElectronicsCategory {
+    private $categoryID;
+    private $categoryCode;
+    private $categoryName;
+    private $aisleNumber;
     public $ElectronicsCategoryID;
     public $ElectronicsCategoryCode;
     public $ElectronicsCategoryName;
@@ -17,27 +21,39 @@ class ElectronicsCategory {
         $this->AisleNumber = $aisle;
     }
 
+    public function setCategoryID($categoryID) {
+        $this->categoryID = $categoryID;
+    }
+
+    public function setCategoryCode($categoryCode) {
+        $this->categoryCode = $categoryCode;
+    }
+
+    public function setCategoryName($categoryName) {
+        $this->categoryName = $categoryName;
+    }
+
+    public function setAisleNumber($aisleNumber) {
+        $this->aisleNumber = $aisleNumber;
+    }
+
     
     public function save() {
-        
         $conn = getDB(); 
 
-        if ($conn) {
-            $sql = "INSERT INTO ElectronicsCategories (ElectronicsCategoryCode, ElectronicsCategoryName, AisleNumber, DateCreated)
-                    VALUES (?, ?, ?, NOW())";
+        $sql = "INSERT INTO ElectronicsCategories (ElectronicsCategoryCode, ElectronicsCategoryName, AisleNumber, DateCreated)
+                VALUES (?, ?, ?, NOW())";
 
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssi", $this->ElectronicsCategoryCode, $this->ElectronicsCategoryName, $this->AisleNumber);
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssi", $this->categoryCode, $this->categoryName, $this->aisleNumber);
 
-            if ($stmt->execute()) {
-                
-            } else {
-                echo "Error: " . $stmt->error;
-            }
-
+        if ($stmt->execute()) {
             $stmt->close();
+            return true;
         } else {
-            echo "Database connection failed.";
+            echo "Database Error: " . $conn->error;
+            $stmt->close();
+            return false;
         }
     }
 
@@ -47,7 +63,7 @@ class ElectronicsCategory {
         $conn = getDB(); 
 
         if ($conn) {
-            $sql = "SELECT ElectronicsCategoryID, ElectronicsCategoryCode, ElectronicsCategoryName FROM ElectronicsCategories";
+            $sql = "SELECT ElectronicsCategoryID, ElectronicsCategoryCode, ElectronicsCategoryName, AisleNumber FROM ElectronicsCategories";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -61,6 +77,20 @@ class ElectronicsCategory {
         }
     }
 
+    public static function getCategoryByID($categoryID) {
+        $conn = getDB(); 
+        $query = "SELECT * FROM ElectronicsCategories WHERE ElectronicsCategoryID = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("i", $categoryID); 
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
+        if ($result->num_rows > 0) {
+            return $result->fetch_assoc(); 
+        } else {
+            return null; 
+        }
+    }
     
     public function update($id, $code, $name, $aisle) {
         $conn = getDB(); 
