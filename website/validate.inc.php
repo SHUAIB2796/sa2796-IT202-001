@@ -1,6 +1,11 @@
 <?php
 require_once('database.php');
-$emailAddress = $_POST['emailAddress'];
+$emailAddress = filter_input(INPUT_POST, 'emailAddress', FILTER_SANITIZE_EMAIL);
+if (!filter_var($emailAddress, FILTER_VALIDATE_EMAIL)) {
+    echo "<h2>Invalid email format. Please enter a valid email.</h2>";
+    echo "<a href=\"index.php\">Please try again</a>";
+    exit();
+}
 $password = $_POST['password'];
 $query = "SELECT firstName, lastName, emailAddress, pronouns FROM DragoManagers " .
         "WHERE emailAddress = ? AND password = SHA2(?,256)";

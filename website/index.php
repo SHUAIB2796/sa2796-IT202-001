@@ -1,21 +1,17 @@
 <?php
 session_start();
-
 date_default_timezone_set('America/New_York');
-
-
 require_once 'database.php';
 
-//Shuaib Ali, 10-23-24, IT202-001 Phase 03 Assignment Email: sa2796@njit.edu UCID: sa2796
+// Shuaib Ali, 10-23-24, IT202-001 Phase 03 Assignment Email: sa2796@njit.edu UCID: sa2796
+// Shuaib Ali, 11-05-24, IT202-001 Phase 04 Assignment Email: sa2796@njit.edu UCID: sa2796
 
 
 if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
-    
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email = isset($_POST['emailAddress']) ? trim($_POST['emailAddress']) : '';
         $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-        
         if (!empty($email) && !empty($password)) {
             $db = getDB();
             if ($db) {
@@ -25,7 +21,6 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
                 $stmt->execute();
                 $result = $stmt->get_result();
 
-                
                 if ($result && $result->num_rows > 0) {
                     $user = $result->fetch_assoc();
                     $_SESSION['login'] = true;
@@ -46,11 +41,11 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
         }
     }
 
-   
     ?>
     <!DOCTYPE html>
     <html>
     <head>
+        <link rel="stylesheet" href="styles.css">
         <title>Login</title>
     </head>
     <body>
@@ -71,23 +66,16 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
     exit(); 
 }
 
-
 $content = isset($_REQUEST['content']) ? $_REQUEST['content'] : 'main';
-
-
-
 
 include 'header.inc.php';
 include 'nav.inc.php';
 
-
 if ($content == 'logout') {
-    
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
 
-   
     session_unset();
     session_destroy();
     header('Location: index.php');
@@ -99,12 +87,12 @@ if ($content == 'logout') {
 <html>
 <head>
     <title>Inventory Helper</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <section id="container">
         <main>
             <?php
-          
             if ($content == 'new_electronics_category') {
                 include 'new_electronics_category.inc.php';
             } elseif ($content == 'list_electronics_categories') {
