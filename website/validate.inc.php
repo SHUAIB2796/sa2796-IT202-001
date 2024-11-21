@@ -25,6 +25,7 @@ if ($fetched) {
    $_SESSION['firstName'] = $firstName;
    $_SESSION['lastName'] = $lastName;
    $_SESSION['pronoun'] = $pronouns;
+   $_SESSION['emailAddress'] = $user['emailAddress']; 
    header("Location: index.php");
    exit();
 } else {

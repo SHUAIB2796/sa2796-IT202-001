@@ -1,5 +1,5 @@
 <footer>
-        <p>Drago Electronics Store | IT-202: 001 | Website Phase 04</p>
+        <p>Drago Electronics Store | IT-202: 001 | Website Phase 05</p>
         <p>Email: sa2796@njit.edu</p>
         <p>&copy; <?php echo date('Y'); ?> All Rights Reserved.</p>
         <p>Current Date/Time: <?php echo date('Y-m-d H:i:s'); ?></p>

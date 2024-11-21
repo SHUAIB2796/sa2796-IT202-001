@@ -2,10 +2,21 @@
 session_start();
 date_default_timezone_set('America/New_York');
 require_once 'database.php';
+require_once 'electronics_category.php';
 
 // Shuaib Ali, 10-23-24, IT202-001 Phase 03 Assignment Email: sa2796@njit.edu UCID: sa2796
 // Shuaib Ali, 11-05-24, IT202-001 Phase 04 Assignment Email: sa2796@njit.edu UCID: sa2796
+// Shuaib Ali, 11-21-24, IT202-001 Phase 05 Assignment Email: sa2796@njit.edu UCID: sa2796
 
+
+if (isset($_GET['action']) && $_GET['action'] === 'fetchSummaryData') {
+    $category = new ElectronicsCategory();
+    $summaryData = $category->getSummaryData();
+
+    header('Content-Type: application/json');
+    echo json_encode($summaryData);
+    exit();
+}
 
 if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -27,6 +38,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
                     $_SESSION['firstName'] = $user['firstName'];
                     $_SESSION['lastName'] = $user['lastName'];
                     $_SESSION['pronoun'] = $user['pronouns'];
+                    $_SESSION['emailAddress'] = $user['emailAddress']; 
                     header('location: index.php'); 
                     exit();
                 } else {

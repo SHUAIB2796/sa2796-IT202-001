@@ -2,6 +2,7 @@
 require_once 'database.php';  
 
 // Shuaib Ali, 10-10-24, IT202-001 Phase 02 Assignment Email: sa2796@njit.edu UCID: sa2796
+// Shuaib Ali, 11-21-24, IT202-001 Phase 05 Assignment Email: sa2796@njit.edu UCID: sa2796
 
 class ElectronicsProduct {
     public $ElectronicsProductID;
@@ -141,5 +142,7 @@ class ElectronicsProduct {
 
         $stmt->close();
     }
+
+
 }
 ?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: sql1.njit.edu
--- Generation Time: Nov 06, 2024 at 01:45 PM
+-- Generation Time: Nov 21, 2024 at 03:23 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.4.8
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `ElectronicsProducts` (
   `ElectronicsWholesalePrice` decimal(10,2) NOT NULL,
   `ElectronicsListPrice` decimal(10,2) NOT NULL,
   `DateCreated` datetime NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=54 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=55 ;
 
 --
 -- Dumping data for table `ElectronicsProducts`
@@ -65,7 +65,6 @@ INSERT INTO `ElectronicsProducts` (`ElectronicsProductID`, `ElectronicsProductCo
 (43, '43', 'iPhone 15', 'The Last Generation iPhone Model. It has a whopping 6.1-inch display!', 'IPHN15', NULL, NULL, 66, 699.00, 799.00, '2024-10-21 17:59:08'),
 (44, '44', 'iPhone 15 Pro', 'The Latest iPhone Pro Model. Larger than Ever Battery Capacity!', 'IPN15PR', NULL, NULL, 66, 799.00, 899.00, '2024-10-21 18:07:03'),
 (50, '50', 'iPhone 16 Pro Max', 'The Latest Pro Max Model for an iPhone. It has a whopping 6.7-inch display! NOW ON DISCOUNT!!!', 'IPN16MX', NULL, NULL, 66, 999.00, 1099.00, '2024-10-21 18:26:59'),
-(53, '505', 'jjdkdsldfdsfdds', 'lkfjsdlfjdkslfjskdfjlskfjlskdjfdsjfksdljfkldjfklsdjfsdkljfkdsjfkldjflkdsjfldjfljfksdjflkdsjflkfjkldfjdjflkjfsdkljfdlskjfdlkfjldjlkfdjfklsdjflsdjdlsfjsdklfjdslfjkldfsjdsljkldsfjdfjlk', 'IPHONE15TSAS', NULL, NULL, 66, 799.00, 899.00, '2024-11-03 15:03:03'),
 (54, '507', 'iPhone 14 Pro', 'The iPhone 14 Pro features a powerful A16 Bionic chip, a stunning 48MP camera system, and a sleek design with Dynamic Island for an immersive experience.', 'IPN14P', NULL, NULL, 66, 499.00, 599.00, '2024-11-05 10:38:38');
 
 --
@@ -86,7 +85,7 @@ ALTER TABLE `ElectronicsProducts`
 -- AUTO_INCREMENT for table `ElectronicsProducts`
 --
 ALTER TABLE `ElectronicsProducts`
-MODIFY `ElectronicsProductID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
+MODIFY `ElectronicsProductID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=60;
 --
 -- Constraints for dumped tables
 --

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: sql1.njit.edu
--- Generation Time: Nov 06, 2024 at 01:45 PM
+-- Generation Time: Nov 21, 2024 at 03:23 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.4.8
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `ElectronicsCategories` (
   `ElectronicsCategoryName` varchar(255) NOT NULL,
   `AisleNumber` int(11) NOT NULL,
   `DateCreated` datetime NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=80 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=93 ;
 
 --
 -- Dumping data for table `ElectronicsCategories`
@@ -43,14 +43,7 @@ INSERT INTO `ElectronicsCategories` (`ElectronicsCategoryID`, `ElectronicsCatego
 (62, 'SMRTW', 'Smartwatches', 7, '2024-10-09 17:51:03'),
 (63, 'HDPH', 'Headphones', 3, '2024-10-09 17:51:03'),
 (64, 'DGCAM', 'Digital Cameras', 9, '2024-10-09 17:51:03'),
-(66, 'SMART', 'Smartphones', 1, '2024-10-09 18:52:40'),
-(67, 'SMART2', 'Fitness Smartwatches', 2, '2024-10-20 18:46:55'),
-(68, 'SMART1', 'Regular Smartwatches', 8, '2024-10-20 19:26:57'),
-(69, 'SMART4', 'Limited Smartwatches', 4, '2024-10-21 14:30:12'),
-(70, 'SMART5', 'The Smartwatch', 6, '2024-10-21 14:36:15'),
-(71, 'SMART6', 'Thee Watch Smart', 10, '2024-10-21 16:33:30'),
-(72, 'SMART7', 'Luxury Smartwatches', 11, '2024-10-21 17:15:41'),
-(80, 'SMART10', 'Ultra Smartwatches', 2, '2024-11-05 10:05:42');
+(66, 'SMART', 'Smartphones', 1, '2024-10-09 18:52:40');
 
 --
 -- Indexes for dumped tables
@@ -70,7 +63,7 @@ ALTER TABLE `ElectronicsCategories`
 -- AUTO_INCREMENT for table `ElectronicsCategories`
 --
 ALTER TABLE `ElectronicsCategories`
-MODIFY `ElectronicsCategoryID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=81;
+MODIFY `ElectronicsCategoryID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=93;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
